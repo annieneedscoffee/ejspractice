@@ -4,6 +4,8 @@ var port = process.env.PORT || 8000;
 app.use(express.static(__dirname + '/static'));
 app.set('view engine', 'ejs');
 var fs = require('fs');
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res){
   let obj = {
@@ -42,8 +44,22 @@ res.render('login');
 });
 
 app.post('/login', function(req, res){
-  fs.writeFile("./storage.json", JSON.stringify
+  console.log(req.body.name);
+  fs.writeFile('./storage.json', req.body.name, function(err){
+    if(err){
+      throw err;
+    }
 
+  })
+  fs.readFile('./storage.json', 'utf8', function(err, data){
+    if(err){
+      throw err;
+    }
+    let person =data+'foo';
+    console.log(person);
+    let people = [data];
+  })
+res.render('login');
 });
 app.listen(port, function () {
   console.log("running on localhost:"+port);
