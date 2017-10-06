@@ -1,0 +1,25 @@
+{
+  "name": "ejspractice",
+  "version": "1.0.0",
+  "description": "### Challenge 1: Create an object that describes you and display that in the index ejs file.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annieneedscoffee/ejspractice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annieneedscoffee/ejspractice/issues"
+  },
+  "homepage": "https://github.com/annieneedscoffee/ejspractice#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.1"
+  }
+}
